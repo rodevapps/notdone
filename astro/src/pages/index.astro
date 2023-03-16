@@ -1,0 +1,10 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import type { Product } from '../types';
+
+const products: Product[] = await fetch('https://dummyjson.com/products?select=id,title,description,price').then((res) => res.json()).then((res) => res.products);
+---
+
+<Layout title="Home Page">
+</Layout>

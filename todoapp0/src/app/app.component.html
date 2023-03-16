@@ -1,0 +1,37 @@
+<style>
+ input, .tasks {
+  width: 50%;
+  margin: auto;
+ }
+
+ input {
+  height: 30px;
+ }
+
+ .section0 {
+  text-align: center;
+ }
+
+ .section1 {
+  margin-top: 20px;
+ }
+
+ .tasks {
+  margin-top: 10px;
+  padding: 21px 0px;
+  border: 1px dashed red;
+ }
+</style>
+
+<section class="section0">
+ <input type="text" name="ntask" value="" placeholder="Type new task here..." (keyup.enter)="onEnter($event)" [formControl]="ntask" />
+</section>
+
+<section class="section1">
+ <div class="tasks" *ngIf="tasks.length == 0">
+  <span>Nothing to do :-)</span>
+ </div>
+ <div class="tasks" *ngFor="let task of tasks">
+  <span>{{ task.value }} </span>
+ </div>
+</section>
